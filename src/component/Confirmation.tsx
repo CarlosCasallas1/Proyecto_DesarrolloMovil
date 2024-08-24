@@ -26,6 +26,13 @@ const Confirmation: React.FC<{ navigation: any }> = ({ navigation }) => {
       >
         Cart
       </Button>
+      <Button
+        style={styles.favoriteButton}
+        mode="contained"
+        onPress={() => navigation.navigate('FavoritesScreen')}
+      >
+        Favorite
+      </Button>
       <Text style={styles.title}>Product Information</Text>
       <Inventory onSelect={handleProductSelect} />
       {selectedProduct && (
@@ -65,6 +72,12 @@ const styles = StyleSheet.create({
     position: 'absolute',
     top: 16,
     right: 16,
+    zIndex: 1,
+  },
+  favoriteButton: {
+    position: 'absolute',
+    top: 16,
+    right: 110, // Ajuste para posicionar el botón Favorite correctamente
     zIndex: 1,
   },
   modalContainer: {

@@ -8,8 +8,13 @@ import Cart from './UI/Cart';
 import Login from './src/component/Login';
 import Inventory from './UI/Inventory';
 import Confirmation from './src/component/Confirmation';
-import RegisterScreen from './src/component/RegisterScreen'; // Asegúrate de importar RegisterScreen
-import MascotaCard from './UI/MascotaCard';
+import RegisterScreen from './src/component/RegisterScreen'; 
+import PaymentBranchScreen from './UI/PaymentBranchScreen';
+import FavoritesScreen from  './UI/FavoritesScreen';
+
+
+
+// import MascotaCard from './UI/MascotaCard';
 
 // Definir el tipo de Producto
 export type Product = {
@@ -28,8 +33,10 @@ export type RootStackParamList = {
   Login: undefined;
   Inventory: undefined;
   Confirmation: { products: Product[] }; // Tipo de parámetro para la pantalla Confirmation
-  RegisterScreen?: undefined; // Añadido tipo para RegisterScreen
-  MascotaCard?: undefined;
+  RegisterScreen: undefined; // Añadido tipo para RegisterScreen
+  PaymentBranchScreen: undefined;
+  FavoritesScreen: undefined;
+
 };
 
 // Crear el Stack Navigator
@@ -38,7 +45,7 @@ const Stack = createStackNavigator<RootStackParamList>();
 const App: React.FC = () => {
   return (
     <SafeAreaProvider>
-      <NavigationContainer>
+      <NavigationContainer> 
         <Stack.Navigator>
           <Stack.Screen
             name='Login'
@@ -51,6 +58,11 @@ const App: React.FC = () => {
             options={{ title: 'Confirmation' }}
           />
           <Stack.Screen
+            name='PaymentBranchScreen'
+            component={PaymentBranchScreen} 
+            options={{ title: ' Branch Screen' } }
+          />
+          <Stack.Screen
             name='Inventory'
             component={Inventory} 
             options={{ title: 'Inventory' } }
@@ -58,13 +70,22 @@ const App: React.FC = () => {
           <Stack.Screen
             name='Cart'
             component={Cart}
-            options={{ title: 'Carts' }}
+            options={{ title: 'Cart' }}
           />
           <Stack.Screen
             name='RegisterScreen'
             component={RegisterScreen}
             options={{ title: 'Register' }}
           />
+ <Stack.Screen
+            name='FavoritesScreen'
+            component={FavoritesScreen}
+            options={{ title: 'Favorite' }}
+          />
+
+
+
+
         
         </Stack.Navigator>
       </NavigationContainer>

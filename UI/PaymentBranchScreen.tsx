@@ -1,35 +1,68 @@
-import React, { useState } from 'react';
-import { View, Text } from 'react-native';
-import { PaperProvider, Button, TextInput } from 'react-native-paper'; 
-import globalStyles from '../src/styles/globalStyles'; 
+import React from 'react';
+import { View, StyleSheet } from 'react-native';
+import { PaperProvider, TextInput, Button } from 'react-native-paper';
+import globalStyles from '../src/styles/globalStyles';
 
-const PaymentBranchScreen: React.FC<{ navigation: any }> = ({ navigation }) => {
-const [branch, setBranch] = useState<string | null>(null);
+const CreateBranchScreen: React.FC = () => {
+  const handleConfirm = () => {
+    // Lógica para confirmar la creación de la sucursal
+    console.log('Sucursal confirmada');
+  };
 
-const handlePaymentBranchSelection = (selectedBranch: string) => {
-    setBranch(selectedBranch);
-    navigation.navigate('Cart');
-};
-
-    return (
+  return (
     <PaperProvider>
-        <View style={globalStyles.container}>
-        <Text style={globalStyles.label}>Seleccione una sucursal de pago:</Text>
+      <View style={styles.container}>
+        <TextInput
+          label="Owner name"
+          style={styles.input}
+        />
+        <TextInput
+          label="Branch name"
+          secureTextEntry
+          style={styles.input}
+        />
+        <TextInput
+          label="Email"
+          keyboardType="email-address"
+          style={styles.input}
+        />
+        <TextInput
+          label="Branch Number"
+          style={styles.input}
+        />
+        <TextInput
+          label="Personal Identification"
+          style={styles.input}
+        />
+
         <Button
-            mode="contained"
-            onPress={() => handlePaymentBranchSelection('Sucursal 1')}
+          mode="contained"
+          onPress={handleConfirm}
+          style={styles.button} 
         >
-            Sucursal 1
+          Confirm
         </Button>
-        <Button
-            mode="contained"
-            onPress={() => handlePaymentBranchSelection('Sucursal 2')}
-        >
-            Sucursal 2
-        </Button>
-        </View>
+      </View>
     </PaperProvider>
-    );
+  );
 };
 
-export default PaymentBranchScreen
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+    padding: 20,
+    backgroundColor: '#f5f5f5',
+  },
+  input: {
+    marginBottom: 15,
+    backgroundColor: 'white',
+  },
+  button: {
+    marginTop: 20, 
+    backgroundColor: '#6200ee', 
+  },
+});
+
+export default CreateBranchScreen;

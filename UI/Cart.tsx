@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
 import { View, Text, Image, FlatList, Button, Modal, TextInput, StyleSheet } from 'react-native';
-import globalStyles from '../src/styles/globalStyles'; // Asegúrate de que esta ruta sea correcta
-import { Product, Products } from './Inventory'; // Asegúrate de que esta ruta sea correcta
-
-const Cart: React.FC = () => {
+import globalStyles from '../src/styles/globalStyles'; 
+import { Product, Products } from './Inventory'; 
+const Cart: React.FC <{ navigation: any }> = ({ navigation }) => {
   const [showAppointmentModal, setShowAppointmentModal] = useState<boolean>(false);
   const [user, setUser] = useState<string>('');
   const [password, setPassword] = useState<string>('');
@@ -17,8 +16,8 @@ const Cart: React.FC = () => {
   return (
     <View style={globalStyles.container}>
       <View style={[globalStyles.card, styles.header]}>
-        <Text style={styles.headerText}>Lista</Text>
-      </View>
+        <Text style={styles.headerText}>shopping list</Text>
+      
       <View style={styles.main}>
         <FlatList
           data={Products}
@@ -35,8 +34,13 @@ const Cart: React.FC = () => {
               </View>
             </View>
           )}
+          
         />
       </View>
+      </View>
+
+
+
 
       <View style={styles.footer}>
         <Button title="Continue shopping" onPress={() => setShowAppointmentModal(true)} />
@@ -51,7 +55,7 @@ const Cart: React.FC = () => {
           <View style={styles.modalContent}>
             <Text style={styles.modalTitle}>Purchase confirmation</Text>
             <View style={styles.formGroup}>
-              <Text>Correo</Text>
+              <Text>User</Text>
               <TextInput
                 style={styles.textInput}
                 value={user}
@@ -72,7 +76,15 @@ const Cart: React.FC = () => {
 
             <View style={styles.buttonContainer}>
               <Button title="Cancel" onPress={() => setShowAppointmentModal(false)} />
-              <Button title="Continue" onPress={handleAppointmentSubmit} />
+              <Button title="Continue" onPress={() => navigation.navigate('PaymentBranchScreen')} />
+
+
+
+     {/* <Button  style={styles.cartButton}   mode="contained" onPress={() => navigation.navigate('Cart')} >
+        Cart
+      </Button> */}
+
+
             </View>
           </View>
         </View>
