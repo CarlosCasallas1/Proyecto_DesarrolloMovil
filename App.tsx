@@ -58,7 +58,7 @@ const App: React.FC = () => {
           <Stack.Screen
             name='Cart'
             component={Cart}
-            options={{ title: 'Cart' }}
+            options={{ title: 'Carts' }}
           />
           <Stack.Screen
             name='RegisterScreen'
