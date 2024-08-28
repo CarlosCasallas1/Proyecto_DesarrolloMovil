@@ -17,7 +17,7 @@ const RegisterScreen: React.FC<{ navigation: any }> = ({ navigation }) => {
   return (
     <PaperProvider>
       <ImageBackground
-        source={require('../../src/images/MovilNavFondo.jpg')}
+        source={require('../../src/images/LogFondo.jpg')}
         style={styles.background}
       >
         <View style={styles.container}>
