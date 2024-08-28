@@ -2,6 +2,9 @@ import React, { useState } from 'react';
 import { View, Text, Image, FlatList, Button, Modal, TextInput, StyleSheet } from 'react-native';
 import globalStyles from '../src/styles/globalStyles'; 
 import { Product, Products } from './Inventory'; 
+
+
+
 const Cart: React.FC <{ navigation: any }> = ({ navigation }) => {
   const [showAppointmentModal, setShowAppointmentModal] = useState<boolean>(false);
   const [user, setUser] = useState<string>('');
