@@ -11,6 +11,8 @@ import Confirmation from './src/component/Confirmation';
 import RegisterScreen from './src/component/RegisterScreen'; 
 import PaymentBranchScreen from './UI/PaymentBranchScreen';
 import FavoritesScreen from  './UI/FavoritesScreen';
+//
+import WhiteList from './UI/WhiteList';
 
 
 
@@ -32,10 +34,12 @@ export type RootStackParamList = {
   Cart: undefined;
   Login: undefined;
   Inventory: undefined;
-  Confirmation: { products: Product[] }; // Tipo de parámetro para la pantalla Confirmation
-  RegisterScreen: undefined; // Añadido tipo para RegisterScreen
+  Confirmation: { products: Product[] }; 
+  RegisterScreen: undefined;
   PaymentBranchScreen: undefined;
   FavoritesScreen: undefined;
+  //
+  WhiteList: undefined;
 
 };
 
@@ -77,12 +81,21 @@ const App: React.FC = () => {
             component={RegisterScreen}
             options={{ title: 'Register' }}
           />
- <Stack.Screen
+            <Stack.Screen
             name='FavoritesScreen'
             component={FavoritesScreen}
             options={{ title: 'Favorite' }}
           />
+          
 
+
+
+
+          <Stack.Screen
+            name='WhiteList'
+            component={WhiteList}
+            options={{ title: ' favorites list' }}
+          />
 
 
 
