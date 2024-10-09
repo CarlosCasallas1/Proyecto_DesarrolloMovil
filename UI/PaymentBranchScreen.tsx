@@ -1,7 +1,7 @@
 import React from 'react';
-import { View, StyleSheet } from 'react-native';
+import { View } from 'react-native';
 import { PaperProvider, TextInput, Button } from 'react-native-paper';
-import globalStyles from '../src/styles/globalStyles';
+import styles from '../src/styles/PaymentBranchScreenStyles'; // Importación de los estilos
 
 const CreateBranchScreen: React.FC = () => {
   const handleConfirm = () => {
@@ -38,7 +38,7 @@ const CreateBranchScreen: React.FC = () => {
         <Button
           mode="contained"
           onPress={handleConfirm}
-          style={styles.button} 
+          style={styles.button}
         >
           Confirm
         </Button>
@@ -47,22 +47,15 @@ const CreateBranchScreen: React.FC = () => {
   );
 };
 
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    padding: 20,
-    backgroundColor: '#f5f5f5',
-  },
-  input: {
-    marginBottom: 15,
-    backgroundColor: 'white',
-  },
-  button: {
-    marginTop: 20, 
-    backgroundColor: '#6200ee', 
-  },
-});
-
 export default CreateBranchScreen;
+
+
+
+
+
+
+
+
+
+
+
