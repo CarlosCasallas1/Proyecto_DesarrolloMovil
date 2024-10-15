@@ -1,5 +1,12 @@
 
 import React from 'react';
+// import firebase from 'firebase/compat/app';
+// import { Database } from 'firebase/database';
+import firebase from '@react-native-firebase/app';
+import Database  from '@react-native-firebase/database';
+import firestore from '@react-native-firebase/firestore';
+
+
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { SafeAreaProvider } from 'react-native-safe-area-context';

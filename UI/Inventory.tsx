@@ -41,7 +41,7 @@ export const Products: Product[] = [
   {
     id: 3,
     title: 'Juguetes',
-    imageUrl: 'https://http2.mlstatic.com/D_NQ_NP_890543-MLU78594081575_082024-O.webp',
+    imageUrl: 'https://ss424.liverpool.com.mx/sm/1155896864.jpg',
     description: 'Juguete del Hombre Araña, detallado y articulado, ideal para recrear aventuras épicas y fomentar la imaginación de los niños.',
     type: 'Jugete del hombre araña',
     year: '2021',

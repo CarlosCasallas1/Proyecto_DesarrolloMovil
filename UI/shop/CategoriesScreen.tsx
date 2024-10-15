@@ -80,6 +80,7 @@ const styles = StyleSheet.create({
   },
   categoryButtonText: {
     fontWeight: 'bold',
+    color: 'black', // Cambia el color a negro
   },
   productItem: {
     margin: 10,
@@ -106,5 +107,6 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
   },
 });
+
 
 export default CategoriesScreen;
